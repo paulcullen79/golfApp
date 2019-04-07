@@ -1,29 +1,20 @@
-// var http = require('http')
 
-//const data = [{"Curr":"27","Prior":"29","+/-":"+2","Team Name":"Pauls-Balls","Amount Won":"$10,103,910","$ From First":"-$2,192,709","$ From 78th":"$1,310,576"},{"Curr":"54","Prior":"64","+/-":"+10","Team Name":"Jordan Spieth - simply the best!","Amount Won":"$9,242,536","$ From First":"-$3,054,083","$ From 78th":"$449,202"},{"Curr":"100","Prior":"104","+/-":"+4","Team Name":"The Clare Savages","Amount Won":"$8,380,245","$ From First":"-$3,916,374","$ From 78th":"-$413,089"},{"Curr":"341","Prior":"334","+/-":"-7","Team Name":"Tipperary Stonethrowers","Amount Won":"$5,137,472","$ From First":"-$7,159,147","$ From 78th":"-$3,655,862"},{"Curr":"353","Prior":"319","+/-":"-34","Team Name":"Premier County","Amount Won":"$5,056,707","$ From First":"-$7,239,912","$ From 78th":"-$3,736,627"}]
-// const userAction = async () => {
-//     const response = await fetch('http://localhost:3000/golfpool-standings');
-//     const myJson = await response.json()
-//     return myJson
-//   }
+
+const data = [{"Curr":"41","Prior":"27","+/-":"-14","Team Name":"Pauls-Balls","Amount Won":"$10,926,152","$ From First":"-$3,287,709","$ From 78th":"$1,096,503"},{"Curr":"78","Prior":"54","+/-":"-24","Team Name":"Jordan Spieth - simply the best!","Amount Won":"$9,829,649","$ From First":"-$4,384,212","$ From 78th":"$0"},{"Curr":"118","Prior":"100","+/-":"-18","Team Name":"The Clare Savages","Amount Won":"$9,144,045","$ From First":"-$5,069,816","$ From 78th":"-$685,604"},{"Curr":"303","Prior":"353","+/-":"+50","Team Name":"Premier County","Amount Won":"$6,548,020","$ From First":"-$7,665,841","$ From 78th":"-$3,281,629"},{"Curr":"364","Prior":"341","+/-":"-23","Team Name":"Tipperary Stonethrowers","Amount Won":"$5,740,390","$ From First":"-$8,473,471","$ From 78th":"-$4,089,259"}]
+
+// GET request to localhost endpoint running server.js
+//const data = $.getJSON("http://localhost:3000/golfpool-standings")
 
 
 
-const data = userAction()
-console.log(data)
 
-console.log('Test')
+// Getting date from moment.js
 const dateEl = document.querySelector("#date")
 
 const date = moment().calendar()
 dateEl.innerHTML = date
 
-const tableEl = document.querySelector("#table1")
-//const row = document.createElement("tr").innerHTML = ("test")
-
-var tableBody = document.createElement('tbody')
-
-const tableHeaders = ['Name', 'Position', 'Move', 'Team Name', 'Amount Won']
+// Sorting player names based on team name order for display in table
 let teamNames = ["Jordan Spieth - simply the best!", "Premier County", "The Clare Savages", "Pauls-Balls", "Tipperary Stonethrowers"]
 const playerNames = ['Graham', 'Johnie B', 'Philip', 'Paul', 'Ruairi']
 let sortedPlayers = []
@@ -45,8 +36,21 @@ const playerSort = (array) => {
 }
 playerSort(data)
 
-// Create table to display data
-if (data.length > 0) {
+// Selecting table to display data
+const tableEl = document.querySelector("#table1")
+var tableBody = document.createElement('tbody')
+
+// Table header names
+const tableHeaders = ['Name', 'Position', 'Move', 'Team Name', 'Amount Won']
+
+
+// Creating table contents
+if (!data.length > 0) {
+    const date = document.getElementById('standings')
+    var error = document.createElement('p')
+    error.innerHTML = ('Error: No data to display')
+    date.appendChild(error)
+} else {
     const rowHeader = tableEl.createTHead()
     const hRow = rowHeader.insertRow(-1)
 
@@ -79,11 +83,6 @@ if (data.length > 0) {
     
         var cell5 = row.insertCell(4)
         var newText = document.createTextNode(data[i]["Amount Won"])
-        cell5.appendChild(newText)        
+        cell5.appendChild(newText) 
     }
-} else {
-    const date = document.getElementById('standings')
-    var error = document.createElement('p')
-    error.innerHTML = ('Error: No data to display')
-    date.appendChild(error)
 }
