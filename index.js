@@ -1,9 +1,9 @@
 
-
-const data = [{"Curr":"41","Prior":"27","+/-":"-14","Team Name":"Pauls-Balls","Amount Won":"$10,926,152","$ From First":"-$3,287,709","$ From 78th":"$1,096,503"},{"Curr":"78","Prior":"54","+/-":"-24","Team Name":"Jordan Spieth - simply the best!","Amount Won":"$9,829,649","$ From First":"-$4,384,212","$ From 78th":"$0"},{"Curr":"118","Prior":"100","+/-":"-18","Team Name":"The Clare Savages","Amount Won":"$9,144,045","$ From First":"-$5,069,816","$ From 78th":"-$685,604"},{"Curr":"303","Prior":"353","+/-":"+50","Team Name":"Premier County","Amount Won":"$6,548,020","$ From First":"-$7,665,841","$ From 78th":"-$3,281,629"},{"Curr":"364","Prior":"341","+/-":"-23","Team Name":"Tipperary Stonethrowers","Amount Won":"$5,740,390","$ From First":"-$8,473,471","$ From 78th":"-$4,089,259"}]
+// Hard coded data used to display object data because GET request is not working
+//const data = [{"Curr":"41","Prior":"27","+/-":"-14","Team Name":"Pauls-Balls","Amount Won":"$10,926,152","$ From First":"-$3,287,709","$ From 78th":"$1,096,503"},{"Curr":"78","Prior":"54","+/-":"-24","Team Name":"Jordan Spieth - simply the best!","Amount Won":"$9,829,649","$ From First":"-$4,384,212","$ From 78th":"$0"},{"Curr":"118","Prior":"100","+/-":"-18","Team Name":"The Clare Savages","Amount Won":"$9,144,045","$ From First":"-$5,069,816","$ From 78th":"-$685,604"},{"Curr":"303","Prior":"353","+/-":"+50","Team Name":"Premier County","Amount Won":"$6,548,020","$ From First":"-$7,665,841","$ From 78th":"-$3,281,629"},{"Curr":"364","Prior":"341","+/-":"-23","Team Name":"Tipperary Stonethrowers","Amount Won":"$5,740,390","$ From First":"-$8,473,471","$ From 78th":"-$4,089,259"}]
 
 // GET request to localhost endpoint running server.js
-//const data = $.getJSON("http://localhost:3000/golfpool-standings")
+const data = $.getJSON("http://localhost:3000/golfpool-standings")
 
 
 

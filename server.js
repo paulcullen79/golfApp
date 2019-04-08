@@ -5,7 +5,6 @@ const teamNames = ['Pauls-Balls', 'Tipperary Stonethrowers', 'Premier County', '
 getTeamsData(teamNames)
 const data = getTeamsData(teamNames)
 
- 
 const express = require('express')  
 const app = express()
 
