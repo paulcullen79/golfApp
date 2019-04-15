@@ -1,5 +1,5 @@
-// use npm table-scraper to get data from golf pool
-// get team data and save team data to text file
+// use npm table-scraper to get data from golf pool standings
+// based on team names 
 
 
 const getTeamsData = (names) => {
@@ -8,7 +8,7 @@ const getTeamsData = (names) => {
     scraper
         .get('http://www.leosgolfpool.com/StandingsYTD')
         .then(tableData => {
-            const data = Object.values(tableData[0])
+            const data = Object.values(tableData[0])    // extract first array of objects=
             // search array of objects for teamNames strings
             // if match add to teamsData array
             data.find(obj => {                
@@ -18,14 +18,11 @@ const getTeamsData = (names) => {
                     }
                 } 
             })
-            return teamsData
         })
         .catch(err => console.log('Error: could not get data'))
             
     return teamsData
 }
-
-
 
 module.exports = getTeamsData;
 
