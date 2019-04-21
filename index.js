@@ -7,7 +7,7 @@ let data = []
 const settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost:3000/golfpool-standings",
+    "url": "https://paulsgolfpool.herokuapp.com/",
     "method": "GET",
 }
 
