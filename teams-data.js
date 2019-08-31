@@ -8,8 +8,8 @@ const getTeamsData = (names) => {
     scraper
         .get('http://www.leosgolfpool.com/StandingsYTD')
         .then(tableData => {
-            const data = Object.values(tableData[0])    // extract first array of objects=
-            // search array of objects for teamNames strings
+            const data = Object.values(tableData[0])    // extract first array of objects
+            // search array of objects for teamName strings
             // if match add to teamsData array
             data.find(obj => {                
                 for (i = 0; i < names.length; i++) {

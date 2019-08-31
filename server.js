@@ -10,6 +10,7 @@ const express = require('express')
 const app = express()
 
 app.get('/golfpool-standings', (req, res) => {
+    res.set('header', 'Access-Control-Allow-Origin')
     res.send(data)
     
 })
