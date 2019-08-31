@@ -7,7 +7,7 @@ let data = []
 const settings = {
     "async": true,
     "crossDomain": true,
-    "url": "https://paulsgolfpool.herokuapp.com//golfpool-standings",
+    "url": "http://3.86.211.62:3000/golfpool-standings",
     "method": "GET",
 }
 
@@ -18,7 +18,7 @@ $.ajax(settings).done(function (response) {
     tableCreate(data)
 })
 
-
+console.log(data)
 // Getting date from moment.js
 const dateEl = document.querySelector("#date")
 const date = moment().calendar()
@@ -43,7 +43,7 @@ const playerSort = (array) => {
         } else if (array[i]["Team Name"] === teamNames[4]) {
             sortedPlayers[i] = playerNames[4]
         }       
-    }    
+    }   
 }
 
 
