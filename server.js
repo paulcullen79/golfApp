@@ -6,15 +6,17 @@ const getTeamsData = require('./teams-data')
 const teamNames = ['Pauls-Balls', 'Tipperary Stonethrowers', 'Premier County', 'Jordan Spieth - simply the best!', 'The Clare Savages']
 const data = getTeamsData(teamNames)
 
-const express = require('express')  
+const express = require('express') 
+const cors = require('cors') 
 const app = express()
 
+app.use(cors())
+
 app.get('/golfpool-standings', (req, res) => {
-    res.set('header', 'Access-Control-Allow-Origin')
     res.send(data)
     
 })
 
 const port = process.env.port || 3000
-app.listen(port, () => console.log(`Listening on port ${port}...`))
+app.listen(port, () => console.log(`CORS enabled: Listening on port ${port}...`))
 
