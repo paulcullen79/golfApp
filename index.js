@@ -2,21 +2,17 @@
 // and creates a table displaying array object data
 
 
-let data = []
+// 
+import getTeamsData from './teams-data'
 
-const settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://3.86.211.62:3000/golfpool-standings",
-    "method": "GET",
-}
+const teamNames = [ 'Pauls-Balls', 
+                    'Tipperary Stonethrowers', 
+                    'Premier County', 
+                    'Jordan Spieth - simply the best!', 
+                    'The Clare Savages']
 
-// jQuery AJAX call to server.js endpoint
-$.ajax(settings).done(function (response) {
-    data = response;
-    playerSort(data)
-    tableCreate(data)
-})
+let data = getTeamsData(teamNames)
+
 
 console.log(data)
 // Getting date from moment.js

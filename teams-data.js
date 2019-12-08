@@ -2,7 +2,7 @@
 // based on team names 
 
 
-const getTeamsData = (names) => {
+export default function getTeamsData(names) {
     const teamsData = []
     scraper = require('table-scraper')
     scraper
@@ -24,5 +24,5 @@ const getTeamsData = (names) => {
     return teamsData
 }
 
-module.exports = getTeamsData;
+
 
