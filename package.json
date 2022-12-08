@@ -10,11 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "joi": "^14.3.1",
     "jquery": "^3.4.0",
     "live-server": "^1.2.1",
     "moment": "^2.24.0",
-    "table-scraper": "^0.1.0"
+    "table-scraper": "^1.0.3"
   }
 }
